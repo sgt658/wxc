@@ -1,0 +1,208 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    padding-bottom: 60px;
+}
+
+/* 顶部背景及覆盖 */
+.header-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px; 
+    overflow: hidden;
+}
+
+.header-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-header {
+    position: absolute;
+    top: 50px; /* 从顶部20px的位置开始 */
+    left: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 80px;
+}
+
+
+.profile-header .avatar img {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-header .info {
+    margin-left: 12px;
+}
+
+.profile-header .info h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.profile-header .info .id {
+    font-size: 12px;
+    color: #666;
+}
+
+.profile-header .actions {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* 统计 & 购物车部分 */
+.stats-cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 12px 16px;
+    border-top: 1px solid #eee;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats strong {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stats span {
+    font-size: 12px;
+    color: #666;
+}
+
+.cart-btn {
+    background: #8fe0d8;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 标签菜单（作品/收藏/橱窗） */
+.tab-menu {
+    display: flex;
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-menu .tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #555;
+    font-weight: bold; /* 设置为加粗 */
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 悬停效果 */
+.tab-menu .tab:hover {
+    background-color: #f0f0f0;
+    color: #0b8884;
+}
+
+/* 激活态：蓝底白字，下边框同色 */
+.tab-menu .tab.active {
+    font-weight: bold;
+    color: #fff;
+    font-weight: bold; /* 设置为加粗 */
+    background-color: #19847f;
+    border-radius: 8px 8px 0 0;
+}
+
+/* 作品栅格区：一行3列排列 */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px;
+    background: #fff;
+}
+
+/* 单个作品项 */
+.work-item {
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* 平滑的悬停过渡效果 */
+}
+
+.work-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s; /* 悬停时图片的缩放效果 */
+}
+
+/* 作品文本的样式 */
+.work-item p {
+    margin-top: 8px;
+    font-size: 20px; /* 增加字体大小，提升可读性 */
+    color: #333;
+    transition: color 0.3s ease; /* 平滑的文本颜色变化 */
+}
+
+/* 悬停效果 */
+.work-item:hover {
+    transform: scale(1.05); /* 悬停时轻微放大 */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+}
+
+.work-item:hover img {
+    transform: scale(1.1); /* 悬停时图片轻微放大 */
+}
+
+.work-item:hover p {
+    color: #20a6b8; /* 悬停时改变文本颜色 */
+}
+
+.title2 {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    padding: 8px 16px;
+    background: #0f6d9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    font-family: 'Arial', sans-serif;
+    z-index: 999;
+}

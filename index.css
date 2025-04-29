@@ -1,0 +1,124 @@
+/* 基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('images/bgc.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.header-image {
+  height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* 小图叠加区域 */
+.overlay-photos {
+  position: relative;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+}
+
+/* 小图片样式+悬停效果 */
+.small-photo {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+.small-photo:hover {
+  transform: scale(1.15) rotate(2deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.1);
+}
+
+/* 分割线样式 */
+.divider {
+  margin: 40px auto;
+  width: 80%;
+  height: 2px;
+  background-color: #221d1d;
+  border: none;
+}
+
+/* 文字按钮区域 */
+.text-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  width: 80%;
+  margin: 20px auto;
+  font-family: 'Pacifico', cursive;
+}
+
+/* 圆形按钮样式 */
+.lake-link {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  font-size: 28px;
+  color: #090909;
+  text-decoration: none;
+  text-align: center;
+  line-height: 100px;
+  transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 外圈 */
+.lake-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgb(21, 20, 20);
+  border-radius: 50%;
+  transition: border-color 0.4s ease;
+}
+
+/* 内圈 */
+.lake-link::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border: 2px dashed rgb(13, 12, 12);
+  border-radius: 50%;
+  transition: border-color 0.4s ease;
+}
+
+/* 按钮悬停效果 */
+.lake-link:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.lake-link:hover::before {
+  border-color: rgb(7, 7, 7); /* 外圈颜色变化 */
+}
+
+.lake-link:hover::after {
+  border-color: rgb(8, 7, 7); /* 内圈颜色变化 */
+}
